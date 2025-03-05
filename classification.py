@@ -22,7 +22,6 @@ for epochs in epoch_stages:
     last_checkpoint = f"{save_dir}/train_{epochs}/weights/best.pt"
     print(f"Модель сохранена в: {last_checkpoint}")
 
-# Финальный экспорт модели классификации
 final_model = YOLO(last_checkpoint)
 path = final_model.export(format="onnx")
 print(f"Финальная модель классификации экспортирована в: {path}")
